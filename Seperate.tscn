@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdeybnt8ji4ao"]
+
+[ext_resource type="Script" uid="uid://tep2judgndfq" path="res://node_3d.gd" id="1_eo2qy"]
+[ext_resource type="ArrayMesh" uid="uid://dy1t3q1gi7qwv" path="res://Pieces.res" id="2_wmeit"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_eo2qy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_wmeit")

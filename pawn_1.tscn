@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds4142j618hij"]
+
+[ext_resource type="PackedScene" uid="uid://cbavcdk5i0nm5" path="res://Pawn1.glb" id="1_8cc3x"]
+
+[node name="Pawn1" instance=ExtResource("1_8cc3x")]
+
+[node name="Chess_07 - Default_0" parent="Sketchfab_model/Chess Pieces_FBX/RootNode/Chess/Object_4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8876, 59.0438, -34.7495)

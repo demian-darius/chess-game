@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuwaxigtnehnk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qo2np"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.294118, 0.027451, 0.439216, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vk1kp"]
+material = SubResource("StandardMaterial3D_qo2np")
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.125, 0, 0, 0)
+mesh = SubResource("PlaneMesh_vk1kp")

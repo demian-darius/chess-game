@@ -1,0 +1,908 @@
+[gd_scene load_steps=69 format=3 uid="uid://dom6xgue7csrm"]
+
+[ext_resource type="Script" uid="uid://0kspqnbs071x" path="res://Scripts/main.gd" id="1_4c57u"]
+[ext_resource type="PackedScene" uid="uid://drt6scvb4apxa" path="res://checkerboard.glb" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bxt3jm282l0n5" path="res://King/King.tscn" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://dnbohset2u4e3" path="res://Scripts/white_king.gd" id="2_kek77"]
+[ext_resource type="PackedScene" uid="uid://c7b78rsfjkco4" path="res://Queen/Queen.tscn" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://ciix7ccxc4ajf" path="res://Scripts/3Dboard.gd" id="3_lswn8"]
+[ext_resource type="PackedScene" uid="uid://sex4lo4s7cov" path="res://Bishop/Bishop.tscn" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://cjdjxxyfpbelp" path="res://Knight/Knight.tscn" id="5_272bh"]
+[ext_resource type="Script" uid="uid://b2yskpeaux17b" path="res://Scripts/white_queen.gd" id="5_efxa6"]
+[ext_resource type="PackedScene" uid="uid://bioimjvsuy8ad" path="res://Rook/Rook.tscn" id="6_5vw27"]
+[ext_resource type="Script" uid="uid://dvvdgloeers7a" path="res://Scripts/white_bishop_right.gd" id="7_dg77c"]
+[ext_resource type="PackedScene" uid="uid://v1m3hdyumsbo" path="res://Pawn/Pawn.tscn" id="7_kek77"]
+[ext_resource type="Script" uid="uid://cu6asp4wquaj5" path="res://Scripts/camera_rig.gd" id="9_4c57u"]
+[ext_resource type="Script" uid="uid://c5n2cwkpcuo7c" path="res://Scripts/white_bishop_left.gd" id="9_ycdy4"]
+[ext_resource type="Script" uid="uid://ctluwi4vkq1xy" path="res://Scripts/white_knight_right.gd" id="10_w48qg"]
+[ext_resource type="Script" uid="uid://ks20imwftl6u" path="res://Scripts/white_knight_left.gd" id="12_vivmo"]
+[ext_resource type="Script" uid="uid://df3rog8svvo35" path="res://Scripts/white_rook_right.gd" id="13_2cqfq"]
+[ext_resource type="Script" uid="uid://crc6s3fp0su7a" path="res://Scripts/white_rook_left.gd" id="15_yaehf"]
+[ext_resource type="Script" uid="uid://cjsugkcvmxyn1" path="res://Scripts/white_pawn_a.gd" id="16_074og"]
+[ext_resource type="Script" uid="uid://2u51ajypwe1t" path="res://Scripts/white_pawn_b.gd" id="18_82xsv"]
+[ext_resource type="Script" uid="uid://b8wjffj8wosf8" path="res://Scripts/white_pawn_c.gd" id="19_getpj"]
+[ext_resource type="Script" uid="uid://bowkaa1ur3n64" path="res://Scripts/white_pawn_d.gd" id="20_getpj"]
+[ext_resource type="Script" uid="uid://biq3ucx5hivkh" path="res://Scripts/white_pawn_e.gd" id="21_ryguw"]
+[ext_resource type="Script" uid="uid://87yolg1lfray" path="res://Scripts/white_pawn_f.gd" id="22_1u8w0"]
+[ext_resource type="Script" uid="uid://bvb7207pfmxk0" path="res://Scripts/white_pawn_g.gd" id="23_0odxb"]
+[ext_resource type="Script" uid="uid://b27r240prnnfd" path="res://Scripts/white_pawn_h.gd" id="24_0odxb"]
+[ext_resource type="Script" uid="uid://dxfwvcc3n1p50" path="res://Scripts/black_king.gd" id="26_a6jrf"]
+[ext_resource type="Script" uid="uid://e2bl6dmu0r7j" path="res://Scripts/black_queen.gd" id="27_xuqvo"]
+[ext_resource type="Script" uid="uid://bfb6qdb8d8f7" path="res://Scripts/black_bishop_right.gd" id="28_0cp0l"]
+[ext_resource type="Script" uid="uid://d05ydenbn7usf" path="res://Scripts/black_bishop_left.gd" id="29_d2t1y"]
+[ext_resource type="Script" uid="uid://crfgde83vjyqr" path="res://Scripts/black_knight_right.gd" id="30_gngh3"]
+[ext_resource type="Script" uid="uid://cr4padn4el4mu" path="res://Scripts/black_knight_left.gd" id="31_0n3wm"]
+[ext_resource type="Script" uid="uid://yboc40tcseyb" path="res://Scripts/black_rook_right.gd" id="32_qnost"]
+[ext_resource type="Script" uid="uid://bt4hjx3ee6xu1" path="res://Scripts/black_rook_left.gd" id="33_wnkbs"]
+[ext_resource type="Script" uid="uid://b4hoxt1hhiax3" path="res://Scripts/black_pawn_a.gd" id="34_f6a44"]
+[ext_resource type="Script" uid="uid://cvwxpi4ieovg8" path="res://Scripts/black_pawn_b.gd" id="35_0cbny"]
+[ext_resource type="Script" uid="uid://bvi5g3sta3ecw" path="res://Scripts/black_pawn_c.gd" id="36_hrvbo"]
+[ext_resource type="Script" uid="uid://boccamut06vxb" path="res://Scripts/black_pawn_d.gd" id="37_uypp3"]
+[ext_resource type="Script" uid="uid://cukxhd2c8fs5t" path="res://Scripts/black_pawn_e.gd" id="38_blkrb"]
+[ext_resource type="Script" uid="uid://2brjmrmgxjlr" path="res://Scripts/black_pawn_f.gd" id="39_abqjc"]
+[ext_resource type="Script" uid="uid://1bvu25xyiacf" path="res://Scripts/black_pawn_g.gd" id="40_6iyjs"]
+[ext_resource type="Script" uid="uid://dk83xtqqwy7ls" path="res://Scripts/black_pawn_h.gd" id="41_4w656"]
+[ext_resource type="Script" uid="uid://7kunykmkrgjn" path="res://Scripts/turn_order.gd" id="43_d2t1y"]
+[ext_resource type="Script" uid="uid://bb5tg4ln7x1lj" path="res://Scripts/check.gd" id="44_0n3wm"]
+[ext_resource type="Script" uid="uid://dxj7s4r4j87ch" path="res://Scripts/winner.gd" id="45_qnost"]
+[ext_resource type="Script" uid="uid://3bx2iap3svi2" path="res://promotion_ui.gd" id="46_hrvbo"]
+[ext_resource type="Texture2D" uid="uid://448ja8u30tus" path="res://Queen Icon.png" id="47_uypp3"]
+[ext_resource type="Texture2D" uid="uid://c0otdf0lhe8ex" path="res://Knight Icon.png" id="48_blkrb"]
+[ext_resource type="Texture2D" uid="uid://fbbddnp018cb" path="res://Bishop Icon.png" id="49_abqjc"]
+[ext_resource type="Texture2D" uid="uid://d31lewrjfwl28" path="res://Rook Icon.png" id="50_6iyjs"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0xm2m"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_efxa6"]
+radius = 0.443733
+height = 5.24126
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lswn8"]
+radius = 0.421557
+height = 6.04659
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a6jrf"]
+radius = 0.32004
+height = 3.70856
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xuqvo"]
+radius = 0.302483
+height = 5.76906
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qsp4k"]
+radius = 0.348733
+height = 5.65965
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kq58d"]
+radius = 0.512345
+height = 4.0706
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_seu75"]
+radius = 0.505072
+height = 2.96387
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_htxhm"]
+radius = 0.478252
+height = 4.62836
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jq2sk"]
+radius = 0.466937
+height = 4.65108
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4k2k6"]
+radius = 0.409878
+height = 3.80693
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rl1p"]
+radius = 0.473615
+height = 2.63868
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ok6jj"]
+radius = 0.467421
+height = 3.97839
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_facbu"]
+radius = 0.451024
+height = 3.03978
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1qrp"]
+radius = 0.505713
+height = 2.99642
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_come4"]
+radius = 0.442789
+height = 2.68886
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h8e4i"]
+radius = 0.465596
+height = 2.66777
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4lmeg"]
+radius = 0.409374
+height = 2.90564
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_4c57u")
+
+[node name="Chessboard" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0.0219313, 0.582831, -0.141553)
+script = ExtResource("3_lswn8")
+
+[node name="H8" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.873224, -0.00110167, -0.876362)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="G8" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.623196, -0.00110167, -0.876362)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="F8" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.373, -0.00111585, -0.876)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="E8" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.123, -0.000999823, -0.876)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="D8" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.127, -0.000999823, -0.876)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="C8" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.377, -0.000999823, -0.876)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="B8" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.627, -0.000999823, -0.876)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="A8" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.877, -0.000999823, -0.876)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="H7" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.873224, -0.00110167, -0.626563)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="G7" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.623196, -0.00110167, -0.626563)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="F7" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.373, -0.00111585, -0.6262)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="E7" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.123, -0.000999823, -0.6262)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="D7" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.127, -0.000999823, -0.6262)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="C7" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.377, -0.000999823, -0.6262)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="B7" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.627, -0.000999823, -0.6262)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="A7" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.877, -0.000999823, -0.6262)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="H6" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.873224, -0.00110167, -0.374629)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="G6" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.623196, -0.00110167, -0.374629)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="F6" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.373, -0.00111585, -0.374267)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="E6" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.123, -0.000999823, -0.374267)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="D6" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.127, -0.000999823, -0.374267)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="C6" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.377, -0.000999823, -0.374267)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="B6" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.627, -0.000999823, -0.374267)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="A6" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.877, -0.000999823, -0.374267)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="H5" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.873224, -0.00110167, -0.124157)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="G5" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.623196, -0.00110167, -0.124157)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="F5" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.373, -0.00111585, -0.123794)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="E5" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.123, -0.000999823, -0.123794)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="D5" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.127, -0.000999823, -0.123794)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="C5" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.377, -0.000999823, -0.123794)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="B5" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.627, -0.000999823, -0.123794)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="A5" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.877, -0.000999823, -0.123794)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="H4" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.873224, -0.00110167, 0.123659)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="G4" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.623196, -0.00110167, 0.123659)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="F4" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.373, -0.00111585, 0.124021)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="E4" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.123, -0.000999823, 0.124021)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="D4" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.127, -0.000999823, 0.124021)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="C4" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.377, -0.000999823, 0.124021)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="B4" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.627, -0.000999823, 0.124021)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="A4" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.877, -0.000999823, 0.124021)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="H3" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.873224, -0.00110167, 0.375563)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="G3" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.623196, -0.00110167, 0.375563)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="F3" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.373, -0.00111585, 0.375926)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="E3" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.123, -0.000999823, 0.375926)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="D3" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.127, -0.000999823, 0.375926)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="C3" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.377, -0.000999823, 0.375926)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="B3" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.627, -0.000999823, 0.375926)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="A3" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.877, -0.000999823, 0.375926)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="H2" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.873224, -0.00110167, 0.62532)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="G2" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.623196, -0.00110167, 0.62532)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="F2" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.373, -0.00111585, 0.625682)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="E2" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.123, -0.000999823, 0.625682)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="D2" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.127, -0.000999823, 0.625682)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="C2" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.377, -0.000999823, 0.625682)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="B2" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.627, -0.000999823, 0.625682)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="A2" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.877, -0.000999823, 0.625682)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="H1" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.873224, -0.00110167, 0.873615)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="G1" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.623196, -0.00110167, 0.873615)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="F1" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.373, -0.00111585, 0.873977)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="E1" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0.123, -0.000999823, 0.873977)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="D1" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.127, -0.000999823, 0.873977)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="C1" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.377, -0.000999823, 0.873977)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="B1" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.627, -0.000999823, 0.873977)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="A1" type="MeshInstance3D" parent="Chessboard" groups=["board_cells"]]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.877, -0.000999823, 0.873977)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="Pieces" type="Node3D" parent="."]
+
+[node name="White Pieces" type="Node3D" parent="Pieces"]
+
+[node name="WhiteKing" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("2_kek77")
+
+[node name="White King Mesh" parent="Pieces/White Pieces/WhiteKing" instance=ExtResource("2_1bvp3")]
+transform = Transform3D(0.03, 0, 0, 0, 0.00220446, 0.0299189, 0, -0.0299189, 0.00220446, -1.95116, -1.64164, 12.1035)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/WhiteKing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02214, 1.97987, 7.08595)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="WhiteQueen" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("5_efxa6")
+
+[node name="White Queen Mesh" parent="Pieces/White Pieces/WhiteQueen" instance=ExtResource("3_lquwl")]
+transform = Transform3D(0.03, 0, 0, 0, 0.00219714, 0.0299194, 0, -0.0299194, 0.00219714, -1.951, -1.642, 12.103)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/WhiteQueen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01064, 2.40278, 7.08115)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Bishop Right" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("7_dg77c")
+
+[node name="White Bishop Right Mesh" parent="Pieces/White Pieces/White Bishop Right" instance=ExtResource("4_7mycd")]
+transform = Transform3D(0.03, 0, 0, 0, 0.00219714, 0.0299194, 0, -0.0299194, 0.00219714, -2.11557, -1.642, 12.103)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Bishop Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03574, 1.08469, 6.98222)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Bishop Left" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("9_ycdy4")
+
+[node name="White Bishop Left Mesh" parent="Pieces/White Pieces/White Bishop Left" instance=ExtResource("4_7mycd")]
+transform = Transform3D(0.03, 0, 0, 0, 0.00219714, 0.0299194, 0, -0.0299194, 0.00219714, -8.13989, -1.642, 12.103)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Bishop Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96957, 1.247, 6.79246)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Knight Right" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("10_w48qg")
+
+[node name="White Knight Right Mesh" parent="Pieces/White Pieces/White Knight Right" instance=ExtResource("5_272bh")]
+transform = Transform3D(-1.31134e-09, 0.0299194, -0.00219715, 0, 0.00219714, 0.0299194, 0.03, 1.30782e-09, -9.60403e-11, -0.333102, -1.642, -0.568616)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Knight Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.92875, 0.870556, 6.83495)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Knight Left" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("12_vivmo")
+
+[node name="White Knight Left Mesh" parent="Pieces/White Pieces/White Knight Left" instance=ExtResource("5_272bh")]
+transform = Transform3D(0.000597421, 0.029994, -3.6417e-05, 0.000804417, 2.03888e-05, 0.0299892, 0.0299833, -0.000598182, -0.000803851, -10.6039, -1.4296, -0.207565)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Knight Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02889, 0.833537, 6.95589)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Rook Right" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("13_2cqfq")
+
+[node name="White Rook Right Mesh" parent="Pieces/White Pieces/White Rook Right" instance=ExtResource("6_5vw27")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000103671, 0.0299998, 0, -0.0299998, 0.000103671, -2.6579, -1.21321, 12.103)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Rook Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9895, 0.731282, 6.73056)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Rook Left" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("15_yaehf")
+
+[node name="White Rook Left Mesh" parent="Pieces/White Pieces/White Rook Left" instance=ExtResource("6_5vw27")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000103671, 0.0299998, 0, -0.0299998, 0.000103671, -16.5644, -1.21321, 12.103)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Rook Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.93527, 0.872738, 6.79246)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Pawn A" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("16_074og")
+
+[node name="White Pawn A" parent="Pieces/White Pieces/White Pawn A" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, -0.0013091, 0.0299714, 0, -0.0299714, -0.0013091, -18.6294, -1.213, 10.549)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Pawn A"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8182, 0.458714, 4.77317)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Pawn B" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("18_82xsv")
+
+[node name="White Pawn B Mesh" parent="Pieces/White Pieces/White Pawn B" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -16.5631, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Pawn B"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94009, 0.355853, 4.92768)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Pawn C" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("19_getpj")
+
+[node name="White Pawn C Mesh" parent="Pieces/White Pieces/White Pawn C" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -14.564, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Pawn C"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82686, 0.461362, 4.95993)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Pawn D" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("20_getpj")
+
+[node name="White Pawn D Mesh" parent="Pieces/White Pieces/White Pawn D" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -12.6437, -1.213, 10.311)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Pawn D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.969036, 0.525702, 4.57327)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Pawn E" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("21_ryguw")
+
+[node name="White Pawn E Mesh" parent="Pieces/White Pieces/White Pawn E" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -10.6494, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Pawn E"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.995183, 0.416293, 4.86329)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Pawn F" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("22_1u8w0")
+
+[node name="White Pawn F Mesh" parent="Pieces/White Pieces/White Pawn F" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -8.54519, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Pawn F"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13127, 0.315185, 4.87935)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Pawn G" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("23_0odxb")
+
+[node name="White Pawn G Mesh" parent="Pieces/White Pieces/White Pawn G" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -6.62502, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Pawn G"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03675, 0.37495, 4.86903)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="White Pawn H" type="Area3D" parent="Pieces/White Pieces" groups=["chess_pieces"]]
+script = ExtResource("24_0odxb")
+
+[node name="White Pawn H Mesh" parent="Pieces/White Pieces/White Pawn H" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -4.64788, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/White Pieces/White Pawn H"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.02771, 0.384893, 4.88606)
+shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="Black Pieces" type="Node3D" parent="Pieces"]
+transform = Transform3D(-0.999846, 0, 0.0175223, 0, 1, 0, -0.0175223, 0, -0.999846, 0, 0, -0.228985)
+
+[node name="Black King" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99565, 0, 0.0349737)
+script = ExtResource("26_a6jrf")
+
+[node name="Black King Mesh" parent="Pieces/Black Pieces/Black King" instance=ExtResource("2_1bvp3")]
+transform = Transform3D(0.03, 0, 0, 0, 0.00220446, 0.0299189, 0, -0.0299189, 0.00220446, -1.95116, -1.64164, 12.1035)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black King"]
+transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, 1.08408, 1.91806, 7.1369)
+shape = SubResource("CapsuleShape3D_lswn8")
+
+[node name="Black Queen" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0949, 0, -0.0367131)
+script = ExtResource("27_xuqvo")
+
+[node name="Black Queen Mesh" parent="Pieces/Black Pieces/Black Queen" instance=ExtResource("3_lquwl")]
+transform = Transform3D(0.03, 0, 3.63798e-12, 0, 0.00219714, 0.0299194, 0, -0.0299194, 0.00219714, -1.951, -1.642, 12.103)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Queen"]
+transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, -1.0203, 2.53879, 6.93453)
+shape = SubResource("CapsuleShape3D_a6jrf")
+
+[node name="Black Bishop Right" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("28_0cp0l")
+
+[node name="Black Bishop Right Mesh" parent="Pieces/Black Pieces/Black Bishop Right" instance=ExtResource("4_7mycd")]
+transform = Transform3D(0.03, 0, 3.63798e-12, 0, 0.00219714, 0.0299194, 0, -0.0299194, 0.00219714, -2.11557, -1.642, 12.103)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Bishop Right"]
+transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, 3.08441, 0.970368, 7.03539)
+shape = SubResource("CapsuleShape3D_xuqvo")
+
+[node name="Black Bishop Left" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("29_d2t1y")
+
+[node name="Black Bishop Left Mesh" parent="Pieces/Black Pieces/Black Bishop Left" instance=ExtResource("4_7mycd")]
+transform = Transform3D(0.03, 0, 3.63798e-12, 0, 0.00219714, 0.0299194, 0, -0.0299194, 0.00219714, -8.13989, -1.642, 12.103)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Bishop Left"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -2.94143, 1.09643, 6.97981)
+shape = SubResource("CapsuleShape3D_qsp4k")
+
+[node name="Black Knight Right" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("30_gngh3")
+
+[node name="Black Knight Right Mesh" parent="Pieces/Black Pieces/Black Knight Right" instance=ExtResource("5_272bh")]
+transform = Transform3D(-1.33878e-09, 0.0299194, -0.00219715, 0, 0.00219714, 0.0299194, 0.03, 1.28057e-09, -9.09495e-11, -0.333102, -1.642, -0.568616)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Knight Right"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 4.8552, 1.61482, 7.01144)
+shape = SubResource("CapsuleShape3D_kq58d")
+
+[node name="Black Knight Left" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("31_0n3wm")
+
+[node name="Black Knight Left Mesh" parent="Pieces/Black Pieces/Black Knight Left" instance=ExtResource("5_272bh")]
+transform = Transform3D(0.000597421, 0.029994, -3.6417e-05, 0.000804417, 2.03888e-05, 0.0299892, 0.0299833, -0.000598182, -0.000803851, -10.6039, -1.4296, -0.207565)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Knight Left"]
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, -4.97711, 2.02245, 7.04003)
+shape = SubResource("CapsuleShape3D_seu75")
+
+[node name="Black Rook Right" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("32_qnost")
+
+[node name="Black Rook Right Mesh" parent="Pieces/Black Pieces/Black Rook Right" instance=ExtResource("6_5vw27")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000103671, 0.0299998, 0, -0.0299998, 0.000103671, -2.6579, -1.21321, 12.103)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Rook Right"]
+transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, 6.99452, 1.12046, 6.70845)
+shape = SubResource("CapsuleShape3D_htxhm")
+
+[node name="Black Rook Left" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("33_wnkbs")
+
+[node name="Black Rook Left Mesh" parent="Pieces/Black Pieces/Black Rook Left" instance=ExtResource("6_5vw27")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000103671, 0.0299998, 0, -0.0299998, 0.000103671, -16.5644, -1.21321, 12.103)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Rook Left"]
+transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, -6.90767, 1.14279, 6.74645)
+shape = SubResource("CapsuleShape3D_jq2sk")
+
+[node name="Black Pawn A" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("34_f6a44")
+
+[node name="Black Pawn A Mesh" parent="Pieces/Black Pieces/Black Pawn A" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -18.6445, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Pawn A"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -6.8971, 1.12209, 4.9124)
+shape = SubResource("CapsuleShape3D_4k2k6")
+
+[node name="Black Pawn B" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("35_0cbny")
+
+[node name="Black Pawn B Mesh" parent="Pieces/Black Pieces/Black Pawn B" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -16.5631, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Pawn B"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -4.93971, 1.74244, 4.87196)
+shape = SubResource("CapsuleShape3D_0rl1p")
+
+[node name="Black Pawn C" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("36_hrvbo")
+
+[node name="Black Pawn C Mesh" parent="Pieces/Black Pieces/Black Pawn C" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -14.564, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Pawn C"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -2.85173, 1.02897, 4.87241)
+shape = SubResource("CapsuleShape3D_ok6jj")
+
+[node name="Black Pawn D" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("37_uypp3")
+
+[node name="Black Pawn D Mesh" parent="Pieces/Black Pieces/Black Pawn D" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -12.6462, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Pawn D"]
+transform = Transform3D(1, 0, 5.58794e-09, 0, 1, 0, -5.58794e-09, 0, 1, -0.959368, 1.468, 4.91411)
+shape = SubResource("CapsuleShape3D_facbu")
+
+[node name="Black Pawn E" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("38_blkrb")
+
+[node name="Black Pawn E Mesh" parent="Pieces/Black Pieces/Black Pawn E" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -10.6494, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Pawn E"]
+transform = Transform3D(1, 0, 5.58794e-09, 0, 1, 0, -5.58794e-09, 0, 1, 1.04236, 1.62712, 4.81091)
+shape = SubResource("CapsuleShape3D_b1qrp")
+
+[node name="Black Pawn F" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("39_abqjc")
+
+[node name="Black Pawn F Mesh" parent="Pieces/Black Pieces/Black Pawn F" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -8.54519, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Pawn F"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 3.15579, 1.68917, 4.74333)
+shape = SubResource("CapsuleShape3D_come4")
+
+[node name="Black Pawn G" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("40_6iyjs")
+
+[node name="Black Pawn G Mesh" parent="Pieces/Black Pieces/Black Pawn G" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -6.62502, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Pawn G"]
+transform = Transform3D(1, 0, 5.58794e-09, 0, 1, 0, -5.58794e-09, 0, 1, 5.06498, 1.66197, 4.96274)
+shape = SubResource("CapsuleShape3D_h8e4i")
+
+[node name="Black Pawn H" type="Area3D" parent="Pieces/Black Pieces" groups=["chess_pieces"]]
+script = ExtResource("41_4w656")
+
+[node name="Black Pawn H Mesh" parent="Pieces/Black Pieces/Black Pawn H" instance=ExtResource("7_kek77")]
+transform = Transform3D(0.03, 0, 0, 0, 0.000104719, 0.0299998, 0, -0.0299998, 0.000104719, -4.64788, -1.213, 10.3109)
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pieces/Black Pieces/Black Pawn H"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 7.04314, 1.6013, 4.85816)
+shape = SubResource("CapsuleShape3D_4lmeg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0227222, 0.999742, 0, -0.999742, -0.0227222, 0.545804, 17.1965, 0.812118)
+light_energy = 1.485
+
+[node name="CameraRig" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.000698165, 1, 0, -1, 0.000698165, 1.02214, 20.8428, 11.8139)
+script = ExtResource("9_4c57u")
+
+[node name="Pivot" type="Node3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.561764, 0.234337)
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig/Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.515338, 11.9838, -6.95567)
+current = true
+near = 0.001
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="Numbers" type="Label3D" parent="."]
+transform = Transform3D(8, 0, -3.49691e-07, 3.49691e-07, 1.52855e-14, 8, 0, -8, 1.52855e-14, -8.62251, 0.392327, -0.230691)
+text = "8
+7
+6
+5
+4
+3
+2
+1"
+line_spacing = 5.0
+
+[node name="Letters" type="Label3D" parent="."]
+transform = Transform3D(8, 0, -3.49691e-07, 3.49691e-07, 1.52855e-14, 8, 0, -8, 1.52855e-14, 0.100448, 0.62411, -9.03791)
+text = "A    B    C    D    E    F    G    H"
+
+[node name="Turn order" type="Label" parent="."]
+offset_left = 845.0
+offset_top = 21.0
+offset_right = 1125.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "White Turn "
+horizontal_alignment = 1
+script = ExtResource("43_d2t1y")
+
+[node name="Check" type="Label" parent="."]
+offset_left = 683.0
+offset_top = 554.0
+offset_right = 1136.0
+offset_bottom = 623.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("44_0n3wm")
+
+[node name="End Screen" type="ColorRect" parent="."]
+visible = false
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0.0431373, 0.0431373, 0.0431373, 0.0901961)
+
+[node name="Winner" type="Label" parent="End Screen"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 260.0
+offset_right = 1034.0
+offset_bottom = 388.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("45_qnost")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 1153.0
+offset_bottom = 650.0
+
+[node name="PromotionUI" type="GridContainer" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+columns = 2
+script = ExtResource("46_hrvbo")
+
+[node name="Queen Button" type="Button" parent="CenterContainer/PromotionUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+icon = ExtResource("47_uypp3")
+icon_alignment = 1
+
+[node name="Knight Button" type="Button" parent="CenterContainer/PromotionUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+icon = ExtResource("48_blkrb")
+icon_alignment = 1
+
+[node name="Bishop Button" type="Button" parent="CenterContainer/PromotionUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+icon = ExtResource("49_abqjc")
+icon_alignment = 1
+
+[node name="Rook Button" type="Button" parent="CenterContainer/PromotionUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+icon = ExtResource("50_6iyjs")
+icon_alignment = 1
+
+[connection signal="check" from="Chessboard" to="Check" method="_on_chessboard_check"]
+[connection signal="promote" from="Chessboard" to="CenterContainer/PromotionUI" method="_on_chessboard_promote"]
+[connection signal="switch" from="Chessboard" to="Turn order" method="_on_chessboard_switch"]
+[connection signal="winner" from="Chessboard" to="End Screen/Winner" method="_on_chessboard_winner"]
+[connection signal="pressed" from="CenterContainer/PromotionUI/Queen Button" to="CenterContainer/PromotionUI" method="_on_queen_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PromotionUI/Knight Button" to="CenterContainer/PromotionUI" method="_on_knight_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PromotionUI/Bishop Button" to="CenterContainer/PromotionUI" method="_on_bishop_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PromotionUI/Rook Button" to="CenterContainer/PromotionUI" method="_on_rook_button_pressed"]
