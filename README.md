@@ -2,6 +2,8 @@
 For my bachelor's project I always knew I wanted to make a game. I pondered many ideas but ultimately decided to create a 3D chess game because coding it seemed really easy at first but it turned out to be much more challenging than anticipated.
 # Built With
 - Godot Engine
+# Getting Started
+Simply select a white piece or black piece when it's their respective turns and the chess piece will change color signaling it's been selected. It's color will change and all it's possible moves will be highlighted, simply select the spot you wish to move the piece to. If something goes wrong you can always press the "R" key to restart the piece selection process
 # Usage
 It should be used to play fun matches of chess <br/>
 <br/>
