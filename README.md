@@ -5,7 +5,9 @@ For my bachelor's project I always knew I wanted to make a game. I pondered many
 # Usage
 It should be used to play fun matches of chess <br/>
 <br/>
-.exe link - https://github.com/demian-darius/chess-game/blob/main/Chess-game.exe
+.exe link - https://github.com/demian-darius/chess-game/blob/main/Chess-game.exe <br/>
+<br/>
+.pck link - https://github.com/demian-darius/chess-game/blob/main/Chess-game.pck
 # Roadmap
 - [] Make chess promotion work
 - [] Make the camera function properly
